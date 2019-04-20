@@ -8,14 +8,14 @@ var dataTaskLayer = require('./repo/dataTaskLayer.js');
 var dataUserLayer = require('./repo/dataUserLayer.js');
 
 var app = express();
-var port = 8095;
+var port = process.env.PORT || 8095;
 var cors = require('cors');
 
 const allowedOrigins = [
   'capacitor://localhost',
   'ionic://localhost',
   'http://localhost',
-  'http://localhost:8095',
+  'http://localhost:' + port,
   'http://localhost:8100'
 ];
 // Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)
@@ -202,4 +202,4 @@ app.post('/findUserByUsername', function(req, res) {
 });
 
 console.log("Le serveur est lancé sur le port 8095");
-app.listen(8095);
+app.listen(port);
