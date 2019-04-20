@@ -1,0 +1,21 @@
+
+
+
+<div ng-controller='userCtrl'>
+    <div class="login-form">
+        <p><span class='text-center' type="text">Veuillez rentrer un identifiant et un mot de passe.</span></p>
+        <p><span class="text-center" type="text">Vous pourrez ensuite les renseigner dans le formulaire de connexion.</span></p>
+        <form ng-submit="searchForExistingUser()">
+            <h2 class="text-center">Créer un compte</h2>       
+            <div class="form-group">
+                <input type="text" ng-model="username" class="form-control" placeholder="Identifiant" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" ng-model="password" class="form-control" placeholder="Mot de Passe" required="required">
+            </div> 
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Créer</button>
+            </div> 
+        </form>
+    </div>
+</div>                              		                            

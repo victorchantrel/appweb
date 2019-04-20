@@ -1,0 +1,31 @@
+#tache:hover {
+	cursor: pointer;
+}
+
+.barrer{
+	text-decoration:line-through;
+}
+
+h1{
+	display:inline-block;
+	vertical-align: middle;
+	height:1px;
+	width:15%;
+	background: #0000FF;
+	content:""
+}
+
+h3{
+	display:inline-block;
+	vertical-align: middle;
+	height:4px;
+	width:25%;
+	background: #FF0000;
+	content:""
+}
+.clickable{
+	cursor: pointer;
+}
+/*.surligner{
+	background-color: yellow;
+}*/

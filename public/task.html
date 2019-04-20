@@ -1,0 +1,45 @@
+
+<div ng-controller='todoCtrl'>
+	<div>
+		<div class="text-left" ng-controller='userCtrl'>
+			<form ng-submit="goToLogin()">
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Déconnexion</button>
+				</div>
+			</form>
+		</div>
+		<form ng-submit="addList()">
+				<span> Ajoutez une liste :</span>
+				<input type="text" name="champ" ng-model="nameList">
+				<button type="submit"> Ajouter Liste </button>
+		</form>		
+	</div>
+
+	<br/>
+	<br/>
+	<h3></h3>
+	<div ng-repeat="list in tab" ng-init="indList=$index">
+		<span type='text'> Nom de la liste :</span>
+		<span> {{list.name}} </span>
+		<form ng-submit="addTask(indList, textTask)">
+			<span> Ajouter la tâche :</span>
+			<input type="text" name="champ" ng-model="textTask">
+			<button type="submit"> Ajouter Tâche </button>
+		</form>
+
+		<br/>
+
+		<div ng-repeat="task in list.task" ng-init="indTask=$index">
+			<form ng-submit="updateTaskText(indList, indTask, modif)">
+				<input type="checkbox" ng-checked="list.task[indTask].checked" name="check" ng-click="updateTaskChecked(indList, indTask)">
+				<span id="tache" ng-class="{barrer: task.checked}" >{{ task.text }}</span>
+				<input type="text" name="updateField" ng-model="modif">
+				<button type="submit"> Modifier </button>
+				<a href="" ng-click="deleteTask(list, $index)">X</a>
+			</form>
+		</div>
+		<br/>
+		<h1></h1>
+		<br/><br/>
+	</div>
+</div>
